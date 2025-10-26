@@ -1,9 +1,9 @@
 from typing import List, Dict, Any, Annotated
 from typing_extensions import TypedDict
-from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_groq import ChatGroq
 from langgraph.graph import StateGraph, END
-from langchain.schema import SystemMessage, HumanMessage, AIMessage
+from langchain_core.messages import SystemMessage, HumanMessage, AIMessage
 
 from backend.config import LLM_API_KEY, CONTEXT_WINDOW_SIZE, MODEL_NAME
 
