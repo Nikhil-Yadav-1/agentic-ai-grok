@@ -6,35 +6,6 @@ from langchain.tools import tool
 from langchain_community.utilities import SerpAPIWrapper
 from backend.config import SERPAPI_KEY, EMAIL_ADDRESS, EMAIL_PASSWORD, IMAP_SERVER, SMTP_SERVER, SMTP_PORT
 
-# Pass the key explicitly
-# search = SerpAPIWrapper(serpapi_api_key=SERPAPI_KEY)
-
-
-@tool()
-def web_search(query: str) -> str:
-    """
-    Use this tool to search the web for up-to-date information about a user's query.
-
-    Guidelines for the AI:
-    - Only use this tool when you need current or specific information that you cannot generate from your internal knowledge.
-    - Provide concise and relevant results from the web.
-    - Do not fabricate information; always rely on what the tool returns.
-    - Focus on facts, statistics, or concrete answers rather than opinions.
-    - Return the text exactly as provided by the tool without altering it unnecessarily.
-    
-    Example usage:
-    - "How far are Jaipur and Jodhpur?"
-    - "Latest stock price of Tesla"
-    - "Current weather in London"
-    
-    Returns:
-    - A string containing the top relevant search results.
-    """
-    print("websearch tool used")
-    # return search.run(query)
-    return ("search failed")
-
-
 @tool()
 def read_emails(query: str) -> str:
     """
@@ -354,6 +325,36 @@ def send_email(query: str) -> str:
         return f"❌ Failed to send email: {str(e)}"
     except Exception as e:
         return f"❌ Error sending email: {str(e)}"
+
+
+
+# Pass the key explicitly
+# search = SerpAPIWrapper(serpapi_api_key=SERPAPI_KEY)
+
+
+@tool()
+def web_search(query: str) -> str:
+    """
+    Use this tool to search the web for up-to-date information about a user's query.
+
+    Guidelines for the AI:
+    - Only use this tool when you need current or specific information that you cannot generate from your internal knowledge.
+    - Provide concise and relevant results from the web.
+    - Do not fabricate information; always rely on what the tool returns.
+    - Focus on facts, statistics, or concrete answers rather than opinions.
+    - Return the text exactly as provided by the tool without altering it unnecessarily.
+    
+    Example usage:
+    - "How far are Jaipur and Jodhpur?"
+    - "Latest stock price of Tesla"
+    - "Current weather in London"
+    
+    Returns:
+    - A string containing the top relevant search results.
+    """
+    print("websearch tool used")
+    # return search.run(query)
+    return ("search failed")
 
 
 if __name__ == "__main__":

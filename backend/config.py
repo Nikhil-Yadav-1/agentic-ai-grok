@@ -34,3 +34,6 @@ SMTP_SERVER = os.getenv("SMTP_SERVER", "smtp.gmail.com")
 TOOL_MODULES = os.getenv("TOOL_MODULES", "backend.tools").split(",")
 SERPAPI_KEY = os.getenv("SERPAPI_KEY", "")
 SERPAPI_API_KEY = SERPAPI_KEY  # for langchain_community compatibility
+MCP_SERVER_HOST = os.getenv("MCP_SERVER_HOST", "https://api.githubcopilot.com/mcp/")
+GITHUB_TOKEN = os.getenv("GITHUB_TOKEN", "your_github_token_here_if_using_github_mcp")
+MCP_AUTH_TOKEN = os.getenv("MCP_AUTH_TOKEN", "your_mcp_auth_token_here_if_required")
