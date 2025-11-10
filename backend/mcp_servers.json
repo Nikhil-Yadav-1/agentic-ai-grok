@@ -1,0 +1,9 @@
+{
+  "mcp_servers": [
+    {
+      "name": "google sheets",
+      "base_url": "http://localhost:8129",
+      "description": "Google Sheets MCP Server - interact with Google Sheets documents"
+    }
+  ]
+}
