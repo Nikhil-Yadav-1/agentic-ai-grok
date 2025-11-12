@@ -3,9 +3,10 @@ import json
 import uuid
 import asyncio
 import os 
+from backend.config import MCP_AUTH_TOKEN
 
 MCP_URL = "https://api.githubcopilot.com/mcp/"
-AUTH_TOKEN = os.getenv("MCP_AUTH_TOKEN")
+AUTH_TOKEN = MCP_AUTH_TOKEN
 MCP_PROTOCOL_VERSION = "2024-11-05"
 
 
